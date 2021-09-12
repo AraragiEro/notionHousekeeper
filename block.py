@@ -1,6 +1,6 @@
 
 from Conf import HKMLDatabase
-import NotionAPI as napi
+from NotionApi import NotionAPI as napi
 
 
 class Block(object):
@@ -41,8 +41,16 @@ class HKMission(object):
     
     def UpdateMissionList(self):
         for mission, data in self.MissionList.items():
-            data['json']['properties']['state']['checkbox'] = True
+            data['json']['properties']['勾选框']['checkbox'] = True
             data['json']['properties']['Log']['rich_text'] = [{
+                'text' : {
+                    'content' : "此日志由机器人生成。"
+                },
+                "annotations": {
+                    "color": "red"
+                }
+            }, 
+            {
                 'text' : {
                     'content' : "此日志由机器人生成。"
                 }

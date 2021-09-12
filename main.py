@@ -6,6 +6,7 @@ import time
 
 # personnal model
 from Conf import TOKEN, AUTHOR
+from NotionApi import NotionAPI as napi
 import block
 
 
