@@ -41,7 +41,11 @@ class Text(Property):
     def __init__(self, json):
         # 最少需要多少信息?
         # 照搬
-        self.rich_text = [i for i in json.value]
+        try:
+            self.rich_text = json[json.key[0]]['rich_text']
+            return self.rich_text
+        except:
+            return None
         pass
         
 
