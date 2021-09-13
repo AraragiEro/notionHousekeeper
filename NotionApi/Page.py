@@ -1,8 +1,8 @@
-import property as ppt
+from Property import all
 
 class Page(object):
     def __init__(self) -> None:
-        super().__init__()
+        self.properties = None
 
 
 

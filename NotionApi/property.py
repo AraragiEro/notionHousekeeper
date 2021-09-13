@@ -1,4 +1,5 @@
 import NotionApi
+from structure import DateAndTime as DandT
 
 
 class Property(object):
@@ -75,20 +76,30 @@ class Text(Property):
         }
         )
 
-
-
-
-
-class Checkbox(object):
+class Checkbox(Property):
     def __init__(self) -> None:
         super().__init__()
 
 
-class Data(object):
+
+"""
+"日期时间段": {
+    "id": "TobP",
+    "type": "date",
+    "date": {
+        "start": "2021-09-13T00:00:00.000+08:00",
+        "end": "2021-09-30T00:00:00.000+08:00"
+    }
+}
+"""
+class Data(Property):
     def __init__(self) -> None:
-        super().__init__()
+        self.type = "date"
+        self.start = DandT()
+        self.end = DandT()
 
 
-class Title(object):
+
+class Title(Property):
     def __init__(self) -> None:
         super().__init__()

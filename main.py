@@ -40,8 +40,16 @@ dataq = requests.request(
 
 
 def main():
-    houseKeeper = block.HKMission()
-    houseKeeper.UpdateMissionList()
+    #houseKeeper = block.HKMission()
+    #houseKeeper.UpdateMissionList()
+
+    class test():
+        def __init__(self) -> None:
+            self.a = 0
+            self.b = 0
+
+    a = test()
+    vars(a)
 
 
 if __name__ == '__main__':
