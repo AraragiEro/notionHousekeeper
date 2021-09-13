@@ -37,7 +37,12 @@ class Text(Property):
         self.type = 'rich_text'
         self.rich_text = []
 
+    # 根据notion返回初始化
     def __init__(self, json):
+        # 最少需要多少信息?
+        # 照搬
+        self.rich_text = [i for i in json.value]
+        pass
         
 
     def Addtext(self, 
