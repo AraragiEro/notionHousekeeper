@@ -18,6 +18,7 @@ class annotations(NC):
             self.underline = json["underline"]
             self.code = json["code"]
             self.color = json["color"]
+            return self
         except:
             return None
 

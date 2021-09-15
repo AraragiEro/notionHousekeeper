@@ -71,7 +71,7 @@ class rich_text(NC):
     def LoadJson(self, json:dict):
         for memberJson in json["rich_text"]:
             tmpMember = richTextText()
-            self.rich_text.append(tmpMember.NewText(memberJson))
+            self.rich_text.append(tmpMember.NewOne(memberJson))
 
     def AddText(self, newText):
         self.rich_text.append(newText)
