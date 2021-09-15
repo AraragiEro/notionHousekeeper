@@ -1,5 +1,4 @@
-from abc import abstractmethod
-
+import json
 
 class NotionClass(object):
     def __init__(self) -> None:
@@ -12,6 +11,10 @@ class NotionClass(object):
     def NewOne(self):
         pass
 
+    def __str__(self) -> str:
+        printStr = dict(self)
+        printStr = json.dumps(printStr, indent=4, ensure_ascii=False)
+        return printStr
 
     def keys(self):
         member = vars(self).keys()

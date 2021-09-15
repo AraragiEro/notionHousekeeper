@@ -73,6 +73,9 @@ class rich_text(NC):
             tmpMember = richTextText()
             self.rich_text.append(tmpMember.NewText(memberJson))
 
+    def AddText(self, newText):
+        self.rich_text.append(newText)
+
     def __getitem__(self, item):
         if item == "rich_text":
             outputList = []
