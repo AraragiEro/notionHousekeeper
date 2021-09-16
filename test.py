@@ -1,5 +1,6 @@
 from NotionApi.Page import Page
 from NotionApi.DataBase import Database
+from NotionApi.Block import *
 from NotionApi.Http import Httpapi
 import json, requests
 from NotionApi.Exception import TryToDo
@@ -7,11 +8,19 @@ import uuid
 
 AUTHOR = "Authorization"
 TOKEN = "secret_deky50Il8WOH0E3yJaX2db5abrWpBoXbIOlCZ8aKGTB"
-pageid = "33d427ffbd764574a6d8f3879a9e2f09"
+pageid = "9134323e596d4509b792a4f18bc88a2f"
 Databaseid = "47b60c2e58984585baa40586897f0182"
 
+def main():
+    newBlock = Page()
+    newBlock.InitUser(TOKEN)
+    rs = newBlock.RetrievePage(id_in=pageid)
+    print(json.dumps(rs.json(), indent=4, ensure_ascii=False))
+    print(3)
 
 
+# 测试block模块
+'''
 @TryToDo
 def main():
     newDatebase = Database(TOKEN)
@@ -30,7 +39,7 @@ def main():
     print(newDatebase)
     #print(json.dumps(rd.json(), indent=4, ensure_ascii=False))
     #print(type(rd) == requests.models.Response)
-
+'''
 # 测试page模块
 """
 def main():

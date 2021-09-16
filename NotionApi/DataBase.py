@@ -1,13 +1,8 @@
 from os.path import join
 import json
-
-from requests import NullHandler
-import requests
 from NotionApi.Http import Httpapi
 from NotionApi.NotionClass import NotionClass as NC
 from NotionApi.Property import *
-from requests.models import Response
-from NotionApi.Page import Page
 from NotionApi.Exception import InfoAndPass, TryToDo
 
 class Database(NC, Httpapi):
@@ -66,7 +61,7 @@ class Database(NC, Httpapi):
             info = json.dumps(result.json(), ensure_ascii=False, indent=4)
             raise InfoAndPass("Bad http return:\n" + info)
         self.InitDatabase(result.json())
-        return result 
+        return result
 
     @TryToDo
     def UpdateDatebase(self, Count_in=None, id_in=None):
@@ -76,7 +71,7 @@ class Database(NC, Httpapi):
         if result.status_code != 200:
             info = json.dumps(result.json(), ensure_ascii=False, indent=4)
             raise InfoAndPass("Bad http return:\n" + info)
-        return result 
+        return result
 
     @TryToDo
     def RetrieveDatabase(self, Count_in=None, id_in=None):
@@ -87,10 +82,6 @@ class Database(NC, Httpapi):
             info = json.dumps(result.json(), ensure_ascii=False, indent=4)
             raise InfoAndPass("Bad http return:\n" + info)
         return result
-
-    @TryToDo
-    def ListDatabase(self):
-        pass
 
     def __getitem__(self, item):
         if item == "title":
